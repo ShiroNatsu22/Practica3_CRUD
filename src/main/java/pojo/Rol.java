@@ -9,7 +9,7 @@ public class Rol {
     private String rol_desc;
 
 
-    public String getRol_name() {
+    public String getRol() {
         return rol;
     }
 
