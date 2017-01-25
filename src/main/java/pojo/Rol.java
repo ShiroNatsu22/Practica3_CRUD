@@ -5,23 +5,24 @@ package pojo;
  */
 public class Rol {
 
-    private String name;
-    private String desc;
+    private String rol;
+    private String rol_desc;
 
 
-    public void setName(String name) {
-        this.name = name;
+    public String getRol_name() {
+        return rol;
     }
 
-    public String getName() {
-        return name;
+    public void setRol_name(String rol_name) {
+        this.rol = rol;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getRol_desc() {
+        return rol_desc;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setRol_desc(String rol_desc) {
+        this.rol_desc = rol_desc;
     }
 }
+
