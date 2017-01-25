@@ -13,7 +13,7 @@ public class Rol {
         return rol;
     }
 
-    public void setRol_name(String rol_name) {
+    public void setRol(String rol) {
         this.rol = rol;
     }
 
