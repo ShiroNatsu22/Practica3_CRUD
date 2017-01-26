@@ -1,15 +1,14 @@
 package dbc;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * Created by jgarcias on 24/01/17.
  */
-public class Connection {
-
+public class ConnectionFactory {
+    private static ConnectionFactory instance = new ConnectionFactory();
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://172.16.2.30/dwes";
@@ -18,8 +17,31 @@ public class Connection {
     static final String USER = "root";
     static final String PASS = "test";
 
-    public static void main(String[] args) {
-        java.sql.Connection conn = null;
+    private ConnectionFactory() {
+        try {
+            Class.forName(JDBC_DRIVER);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Connection createConnection() {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(DB_URL, USER, PASS);
+        } catch (SQLException e) {
+            System.out.println("ERROR: Unable to Connect to Database.");
+        }
+        return connection;
+    }
+
+    public static Connection getConnection() {
+        return instance.createConnection();
+    }
+}
+
+    /*public static void main(String[] args) {
+        java.sql.ConnectionFactory conn = null;
         Statement stmt = null;
         try {
             //STEP 2: Register JDBC driver
@@ -77,8 +99,8 @@ public class Connection {
             }//end finally try
         }//end try
         System.out.println("Goodbye!");
-    }//end main
-}
+    }//end main*/
+
 
 
 
