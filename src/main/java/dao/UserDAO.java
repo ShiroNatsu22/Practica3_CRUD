@@ -12,6 +12,6 @@ public interface UserDAO {
     User findUser(String userName);
     List<User> findUser(String name, boolean fillRoll);
     User deleteUser(String name);
-    void insertUser(String name,String password,String[] roles);
+    void insertUser(String name,String password,String[] roles) throws SQLException;
     List<User> getUsers() ;
 }
