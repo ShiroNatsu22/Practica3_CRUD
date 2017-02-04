@@ -48,15 +48,50 @@ public class Controller extends HttpServlet{
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String user_name = req.getParameter("name");
-        String user_pass = req.getParameter("pass");
-        String[] roles = req.getParameterValues("role");
+        String userName;
+        String userPass;
+        String[] roles;
+        String roleName;
+        String roleDesc;
 
-        try {
-            udi.insertUser(user_name, user_pass, roles);
-            resp.sendRedirect("/index");
-        } catch (Exception e) {
-            e.printStackTrace();
+        if(req.getParameter("name") != null) {
+            //Se crea un nuevo usuario
+
+            userName = req.getParameter("name");
+            userPass = req.getParameter("pass");
+            roles = req.getParameterValues("role");
+
+            try {
+                udi.insertUser(userName, userPass, roles);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if(req.getParameter("deleteRole") != null) {
+            //Para borrar un rol
+
+            roleName = req.getParameter("deleteRole");
+
+            try {
+                rdi.deleteRole(roleName);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }else {
+            //Se crea un rol
+            roleName = req.getParameter("roleName");
+            roleDesc = req.getParameter("desc");
+
+            try {
+                rdi.insertRole(roleName,roleDesc);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                java.io.PrintWriter out = resp.getWriter();
+                out.println("<p>Rol duplicado, introdusca otro poh faboh</p>");
+            }
         }
+
+        resp.sendRedirect("/index");
+
     }
 }

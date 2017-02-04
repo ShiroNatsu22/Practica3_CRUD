@@ -7,6 +7,11 @@
 <br>
 <br>
 <br>
-<tag:form></tag:form>
+<tag:formUser></tag:formUser>
+<br>
+<br>
+<br>
+<br>
+<tag:formRol></tag:formRol>
 </body>
 </html>

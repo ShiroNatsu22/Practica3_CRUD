@@ -11,6 +11,6 @@ import java.util.List;
 public interface RoleDao {
 
     List<Role> getRoles() throws SQLException;
-    void insertRol(String rol_name,String rol_desc) throws SQLException;
-    void deleteRol(String rol_name);
+    void insertRole(String rol_name, String rol_desc) throws SQLException;
+    void deleteRole(String rol_name) throws SQLException;
 }

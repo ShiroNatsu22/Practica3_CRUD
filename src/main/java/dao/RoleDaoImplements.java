@@ -13,7 +13,6 @@ import com.mysql.jdbc.PreparedStatement;
 
 import dbc.ConnectionFactory;
 import pojo.Role;
-import pojo.User;
 
 
 public class RoleDaoImplements implements RoleDao {
@@ -48,7 +47,7 @@ public class RoleDaoImplements implements RoleDao {
     }
 
 
-    public void insertRol(String roleName, String roleDesc) throws SQLException {
+    public void insertRole(String roleName, String roleDesc) throws SQLException {
         String sql = "INSERT into dwes.roles VALUES(?,?)";
         PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
         ps.setString(1, roleName);
@@ -57,8 +56,17 @@ public class RoleDaoImplements implements RoleDao {
 
     }
 
-    public void deleteRol(String rol_name) {
+    public void deleteRole(String roleName) throws SQLException {
+        String sql = "DELETE FROM dwes.user_roles WHERE role_name=?";
 
+        PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
+        ps.setString(1, roleName);
+        ps.execute();
+
+        sql = "DELETE FROM dwes.roles WHERE role_name = ?";
+        ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
+        ps.setString(1,roleName);
+        ps.execute();
     }
 
     public void setDbc(ConnectionFactory dbc) {
