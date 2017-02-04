@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="user" class="pojo.User" scope="prototype"></bean>
+    <bean id="role" class="pojo.Role" scope="prototype"></bean>
+
+    <bean id="dbc" class="dbc.ConnectionFactory" scope="singleton">
+        <constructor-arg value="jdbc:mysql://192.168.1.45/dwes"/>
+        <constructor-arg value="root"/>
+        <constructor-arg value="test"/>
+    </bean>
+
+    <bean id="userDaoImp" class="dao.UserDaoImplements" scope="singleton">
+        <property name="dbc" ref="dbc"/>
+    </bean>
+    <bean id="roleDaoImp" class="dao.RoleDaoImplements" scope="singleton">
+        <property name="dbc" ref="dbc"/>
+    </bean>
+
+
+
+</beans>

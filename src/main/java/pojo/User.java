@@ -10,8 +10,20 @@ import java.util.List;
 public class User {
     private String name;
     private String password;
+    private String host;
+    private List<Role> roles = new ArrayList<Role>();
 
-    private List<Rol> roles = new ArrayList<Rol>();
+    public User(String uname,String password) {
+
+        this.name = uname;
+        this.password = password;
+
+    }
+
+
+
+    public User() {
+    }
 
     public String getName() {
         return name;
@@ -30,14 +42,21 @@ public class User {
     }
 
 
-    public List<Rol> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Rol> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
 }
 
 
