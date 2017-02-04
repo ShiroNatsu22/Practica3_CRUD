@@ -77,7 +77,19 @@ public class Controller extends HttpServlet{
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }else {
+        }else if(req.getParameter("deleteUser") != null) {
+            //Para borrar un usuario
+
+            userName = req.getParameter("deleteUser");
+
+            try {
+                udi.deleteUser(userName);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        else {
             //Se crea un rol
             roleName = req.getParameter("roleName");
             roleDesc = req.getParameter("desc");

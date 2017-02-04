@@ -40,25 +40,34 @@ public class UserDaoImplements implements UserDao {
     }
 
     public void deleteUser(String name) throws SQLException {
-        String sql = "DELETE FROM  user_roles where user_name=?";
+        String sql = "DELETE FROM dwes.user_roles WHERE user_name=?";
+
         PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
-        ps.setString(1,name);
+        ps.setString(1, name);
         ps.execute();
-        sql = "DELETE FROM user where user_name=?";
+
+        sql = "DELETE FROM dwes.user WHERE user_name = ?";
         ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
         ps.setString(1,name);
         ps.execute();
-
-
     }
+
+
 
     public void insertUser(String name, String password, String[] roles) throws SQLException {
         String sql = "INSERT into dwes.user VALUES(?,?)";
         PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
         ps.setString(1, name);
         ps.setString(2, password);
-
         ps.execute();
+
+        sql = "INSERT INTO user_roles VALUES(?,?)";
+        for (int i = 0; i < roles.length; i++) {
+            ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
+            ps.setString(1,name);
+            ps.setString(2,roles[i]);
+            ps.execute();
+        }
 
     }
 
