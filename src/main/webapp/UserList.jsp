@@ -13,10 +13,7 @@
 <body>
 <h1>LLISTA D'USUARIS</h1>
 
-<a href="index.jsp">Index</a>
-<a href="CreateRole.jsp">Crear rol</a>
-<a href="/UserForm">Crear user</a>
-<a href="/RoleList">Llista de rols</a>
+<tag:nav></tag:nav>
 
 <tag:UserList></tag:UserList>
 <tag:findUser></tag:findUser>

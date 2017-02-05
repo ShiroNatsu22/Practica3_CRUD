@@ -6,10 +6,7 @@
 
 <html>
 <body>
-<a href="/RoleList">Llista de rols</a>
-<a href="CreateRole.jsp">Crear rols</a>
-<a href="/UserForm">Crear usuaris</a>
-<a href="/UserList"> Llista d'usuaris</a>
+<tag:nav></tag:nav>
 
 </body>
 </html>

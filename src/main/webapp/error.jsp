@@ -7,17 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-<html>
 <head><title>Login Error</title>
 </head>
 <body>
+<tag:nav></tag:nav>
 <h3>Login Error</h3>
 <a href="index.jsp">Click to Login Again</a>
-</body>
-</html>
 </body>
 </html>

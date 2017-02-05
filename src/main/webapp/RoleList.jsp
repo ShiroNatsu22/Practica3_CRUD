@@ -15,10 +15,7 @@
 <body>
 <h1>LLISTA DE ROLS</h1>
 
-<a href="index.jsp">Index</a>
-<a href="CreateRole.jsp">Crear rol</a>
-<a href="/UserForm">Crear usuari</a>
-<a href="/UserList">Llista d'usuaris</a>
+<tag:nav></tag:nav>
 
 <tag:RoleList></tag:RoleList>
 </body>
