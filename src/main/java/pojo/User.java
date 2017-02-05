@@ -20,6 +20,14 @@ public class User {
 
     }
 
+    public User(String uname){
+        this.name = uname;
+    }
+
+    public User(String uname, List<Role> roles) {
+        this.name = uname;
+        this.roles = roles;
+    }
 
 
     public User() {

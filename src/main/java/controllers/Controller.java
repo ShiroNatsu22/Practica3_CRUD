@@ -19,16 +19,38 @@ import java.util.List;
 /**
  * Created by Joshua on 04/02/2017.
  */
-public class Controller extends HttpServlet{
+public class Controller extends HttpServlet {
 
 
     private List<User> userList = new ArrayList<User>();
     private List<Role> roleList = new ArrayList<Role>();
     private static ApplicationContext beans = new ClassPathXmlApplicationContext("spring-conf.xml");
-    UserDaoImplements udi = (UserDaoImplements)beans.getBean("userDaoImp");
+    UserDaoImplements udi = (UserDaoImplements) beans.getBean("userDaoImp");
     RoleDaoImplements rdi = (RoleDaoImplements) beans.getBean("roleDaoImp");
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        if (req.getParameter("findUser") != null) {
+            try {
+                if (udi.findUser(req.getParameter("findUser")) != null) {
+                    if (req.getParameter("fillRole") != null) {
+                        if (req.getParameter("fillRole").equals("fillRole")) {
+                            req.setAttribute("findUser", udi.findUser(req.getParameter("findUser"), true));
+                        }
+                    } else {
+                        req.setAttribute("findUser", udi.findUser(req.getParameter("findUser"), false));
+                    }
+
+                } else {
+                    req.setAttribute("error", "Puton nuub no essiste el usuaario...");
+
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
 
         try {
             userList = udi.getUsers();
@@ -37,14 +59,13 @@ public class Controller extends HttpServlet{
             e.printStackTrace();
         }
 
-
         req.setAttribute("uList", userList);
         req.setAttribute("rList", roleList);
-
 
         req.getRequestDispatcher("index.jsp").forward(req, resp);
 
     }
+
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -54,7 +75,7 @@ public class Controller extends HttpServlet{
         String roleName;
         String roleDesc;
 
-        if(req.getParameter("name") != null) {
+        if (req.getParameter("name") != null) {
             //Se crea un nuevo usuario
 
             userName = req.getParameter("name");
@@ -67,7 +88,7 @@ public class Controller extends HttpServlet{
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } else if(req.getParameter("deleteRole") != null) {
+        } else if (req.getParameter("deleteRole") != null) {
             //Para borrar un rol
 
             roleName = req.getParameter("deleteRole");
@@ -77,7 +98,7 @@ public class Controller extends HttpServlet{
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }else if(req.getParameter("deleteUser") != null) {
+        } else if (req.getParameter("deleteUser") != null) {
             //Para borrar un usuario
 
             userName = req.getParameter("deleteUser");
@@ -87,15 +108,13 @@ public class Controller extends HttpServlet{
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
-
-        else {
+        } else {
             //Se crea un rol
             roleName = req.getParameter("roleName");
             roleDesc = req.getParameter("desc");
 
             try {
-                rdi.insertRole(roleName,roleDesc);
+                rdi.insertRole(roleName, roleDesc);
             } catch (SQLException e) {
                 e.printStackTrace();
                 java.io.PrintWriter out = resp.getWriter();
