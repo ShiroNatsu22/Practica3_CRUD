@@ -15,9 +15,10 @@
 
 <a href="index.jsp">Index</a>
 <a href="CreateRole.jsp">Crear rol</a>
-<a href="CreateUser.jsp">Crear user</a>
-<a href="RoleList.jsp">Llista de rols</a>
+<a href="/UserForm">Crear user</a>
+<a href="/RoleList">Llista de rols</a>
 
 <tag:listUser></tag:listUser>
+<tag:findUser></tag:findUser>
 </body>
 </html>

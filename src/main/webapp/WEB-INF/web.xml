@@ -4,12 +4,50 @@
          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>Archetype Created Web Application</display-name>
 
-  <servlet>
+ <!-- <servlet>
     <servlet-name>Controller</servlet-name>
     <servlet-class>controllers.Controller</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Controller</servlet-name>
     <url-pattern>/index</url-pattern>
+  </servlet-mapping>-->
+  
+  <servlet>
+    <servlet-name>UserList</servlet-name>
+    <servlet-class>controllers.ControllerUserList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RoleList</servlet-name>
+    <servlet-class>controllers.ControllerRoleList</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserForm</servlet-name>
+    <servlet-class>controllers.ControllerUserForm</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RoleForm</servlet-name>
+    <servlet-class>controllers.ControllerRoleForm</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>RoleForm</servlet-name>
+    <url-pattern>/RoleForm</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserForm</servlet-name>
+    <url-pattern>/UserForm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RoleList</servlet-name>
+    <url-pattern>/RoleList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserList</servlet-name>
+    <url-pattern>/UserList</url-pattern>
+  </servlet-mapping>
+  
+  
+
+  
 </web-app>

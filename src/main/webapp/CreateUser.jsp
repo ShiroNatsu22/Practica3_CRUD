@@ -14,8 +14,8 @@
 <h1>CREAR USUARIS</h1>
 <a href="index.jsp"> Index</a>
 <a href="CreateRole.jsp"> Crear Rol</a>
-<a href="UserList.jsp"> Llista d'usuaris</a>
-<a href="RoleList.jsp"> Llista de rols</a>
+<a href="/UserList"> Llista d'usuaris</a>
+<a href="/RoleList"> Llista de rols</a>
 
 <tag:formUser></tag:formUser>
 </body>

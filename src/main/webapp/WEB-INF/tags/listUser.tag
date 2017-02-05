@@ -11,7 +11,7 @@
                 <tr>
                     <td><c:out value="${user.getName()}"/></td>
                     <td><c:out value="${user.getPassword()}"/></td>
-                    <td><form action="/index" method="post"><button type="submit" name="deleteUser" value="${user.getName()}">Borra</button></form></td>
+                    <td><form action="/UserList" method="post"><button type="submit" name="deleteUser" value="${user.getName()}">Borra</button></form></td>
                 </tr>
             </c:forEach>
 
