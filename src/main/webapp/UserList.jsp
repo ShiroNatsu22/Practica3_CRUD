@@ -18,7 +18,7 @@
 <a href="/UserForm">Crear user</a>
 <a href="/RoleList">Llista de rols</a>
 
-<tag:listUser></tag:listUser>
+<tag:UserList></tag:UserList>
 <tag:findUser></tag:findUser>
 </body>
 </html>

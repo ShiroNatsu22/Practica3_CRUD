@@ -17,6 +17,6 @@
 <a href="/UserList"> Llista d'usuaris</a>
 <a href="/RoleList"> Llista de rols</a>
 
-<tag:formUser></tag:formUser>
+<tag:UserForm></tag:UserForm>
 </body>
 </html>

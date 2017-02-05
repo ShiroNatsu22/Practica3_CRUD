@@ -10,21 +10,6 @@
 <a href="CreateRole.jsp">Crear rols</a>
 <a href="/UserForm">Crear usuaris</a>
 <a href="/UserList"> Llista d'usuaris</a>
-<tag:listRole></tag:listRole>
-<br>
-<br>
-<br>
-<br>
-<tag:formUser></tag:formUser>
-<br>
-<br>
-<br>
-<br>
-<tag:formRol></tag:formRol>
-<br>
-<br>
-<br>
-<br>
-<tag:findUser></tag:findUser>
+
 </body>
 </html>

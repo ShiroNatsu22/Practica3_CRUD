@@ -17,6 +17,6 @@
 <a href="/UserForm"> Crear usuari</a>
 <a href="/RoleList"> Llista de rols</a>
 
-<tag:formRol></tag:formRol>
+<tag:RoleForm></tag:RoleForm>
 </body>
 </html>

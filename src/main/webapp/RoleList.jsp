@@ -20,6 +20,6 @@
 <a href="/UserForm">Crear usuari</a>
 <a href="/UserList">Llista d'usuaris</a>
 
-<tag:listRole></tag:listRole>
+<tag:RoleList></tag:RoleList>
 </body>
 </html>
