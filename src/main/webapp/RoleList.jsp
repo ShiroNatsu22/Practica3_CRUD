@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>LLISTA DE ROLS</h1>
-
+<tag:welcomeMessage></tag:welcomeMessage>
 <tag:nav></tag:nav>
 
 <tag:RoleList></tag:RoleList>

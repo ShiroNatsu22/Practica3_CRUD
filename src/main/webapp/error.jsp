@@ -10,7 +10,6 @@
 <head><title>Login Error</title>
 </head>
 <body>
-<tag:nav></tag:nav>
 <h3>Login Error</h3>
 <a href="index.jsp">Click to Login Again</a>
 </body>

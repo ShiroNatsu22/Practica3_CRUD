@@ -12,6 +12,7 @@
 </head>
 <body>
 <h1> CREAR ROLS</h1>
+<tag:welcomeMessage></tag:welcomeMessage>
 <tag:nav></tag:nav>
 <tag:RoleForm></tag:RoleForm>
 </body>

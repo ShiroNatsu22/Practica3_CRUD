@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>LLISTA D'USUARIS</h1>
-
+<tag:welcomeMessage></tag:welcomeMessage>
 <tag:nav></tag:nav>
 
 <tag:UserList></tag:UserList>

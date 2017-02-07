@@ -2,19 +2,18 @@
   Created by IntelliJ IDEA.
   User: Joshua
   Date: 05/02/2017
-  Time: 20:10
+  Time: 22:51
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %><html>
+<html>
 <head>
-    <title>Title</title>
+    <title>logOut</title>
 </head>
 <body>
-<h1>CREAR USUARIS</h1>
-<tag:welcomeMessage></tag:welcomeMessage>
-<tag:nav></tag:nav>
-
-<tag:UserForm></tag:UserForm>
+<%
+    session.invalidate();
+    response.sendRedirect("index.jsp");
+%>
 </body>
 </html>
