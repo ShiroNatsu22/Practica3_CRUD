@@ -43,7 +43,7 @@ public class ControllerUserList extends HttpServlet {
                     }
 
                 } else {
-                    req.setAttribute("error", "Puton nuub no essiste el usuaario...");
+                    req.setAttribute("error", "No existe el usuario...");
 
                 }
 
