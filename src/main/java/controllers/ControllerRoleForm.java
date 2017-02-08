@@ -42,7 +42,7 @@ public class ControllerRoleForm extends HttpServlet{
             }
         }
 
-        resp.sendRedirect("/RoleList");
+        resp.sendRedirect("RoleList");
 
     }
 }

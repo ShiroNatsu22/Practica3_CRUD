@@ -55,7 +55,7 @@ public class ControllerRoleList extends HttpServlet{
             }
         }
 
-        resp.sendRedirect("/RoleList");
+        resp.sendRedirect("RoleList");
 
     }
 }

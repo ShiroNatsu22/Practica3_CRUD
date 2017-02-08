@@ -14,7 +14,7 @@
             <tr>
                 <td><c:out value="${role.getRoleName()}"/></td>
                 <td><c:out value="${role.getRoleDesc()}"/></td>
-                <td><form action="/RoleList" method="post"><button type="submit" name="deleteRole" value="${role.getRoleName()}">Borra</button></form></td>
+                <td><form action="RoleList" method="post"><button type="submit" name="deleteRole" value="${role.getRoleName()}">Borra</button></form></td>
             </tr>
         </c:forEach>
 

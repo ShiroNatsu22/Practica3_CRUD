@@ -57,11 +57,12 @@
     <auth-constraint>
       <description/>
       <role-name>admin</role-name>
+        <!--<role-name>user</role-name>-->
     </auth-constraint>
-    <auth-constraint>
+    <!--auth-constraint>
       <description/>
-      <role-name>user</role-name>
-    </auth-constraint>
+
+    </auth-constraint>-->
   </security-constraint>
 
   <login-config>
@@ -82,6 +83,4 @@
     <role-name>user</role-name>
   </security-role>
 
-
-  
 </web-app>

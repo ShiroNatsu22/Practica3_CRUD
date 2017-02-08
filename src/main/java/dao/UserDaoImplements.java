@@ -64,6 +64,7 @@ public class UserDaoImplements implements UserDao {
 
             }
             return new User(uname, roleList);
+
         } else {
             return findUser(name);
         }

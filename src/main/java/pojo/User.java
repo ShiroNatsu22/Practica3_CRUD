@@ -58,13 +58,7 @@ public class User {
         this.roles = roles;
     }
 
-    public String getHost() {
-        return host;
-    }
 
-    public void setHost(String host) {
-        this.host = host;
-    }
 }
 
 

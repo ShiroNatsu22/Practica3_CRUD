@@ -62,7 +62,7 @@ public class ControllerUserForm extends HttpServlet {
             }
         }
 
-        resp.sendRedirect("/UserList");
+        resp.sendRedirect("UserList");
 
     }
 }
