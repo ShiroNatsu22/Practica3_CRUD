@@ -57,7 +57,7 @@
     <auth-constraint>
       <description/>
       <role-name>admin</role-name>
-      <role-name>user</role-name
+      <role-name>user</role-name>
     </auth-constraint>
     <!--auth-constraint>
       <description/>
