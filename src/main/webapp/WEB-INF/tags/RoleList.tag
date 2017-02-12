@@ -14,7 +14,11 @@
             <tr>
                 <td><c:out value="${role.getRoleName()}"/></td>
                 <td><c:out value="${role.getRoleDesc()}"/></td>
-                <td><form action="RoleList" method="post"><button type="submit" name="deleteRole" value="${role.getRoleName()}">Borra</button></form></td>
+                <c:choose>
+                    <c:when test="${requestScope['admin']}">
+                        <td><form action="RoleList" method="post"><button type="submit" name="deleteRole" value="${role.getRoleName()}">Borra</button></form></td>
+                    </c:when>
+                </c:choose>
             </tr>
         </c:forEach>
 

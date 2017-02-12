@@ -11,10 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>CREAR USUARIS</h1>
-<tag:welcomeMessage></tag:welcomeMessage>
-<tag:nav></tag:nav>
 
+<tag:welcomeMessage></tag:welcomeMessage>
 <tag:UserForm></tag:UserForm>
 </body>
 </html>

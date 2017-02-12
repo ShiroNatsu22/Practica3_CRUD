@@ -4,15 +4,18 @@
          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>Archetype Created Web Application</display-name>
 
- <!-- <servlet>
-    <servlet-name>Controller</servlet-name>
-    <servlet-class>controllers.Controller</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Controller</servlet-name>
-    <url-pattern>/index</url-pattern>
-  </servlet-mapping>-->
-  
+
+
+  <filter>
+    <filter-name>adminFilter</filter-name>
+    <filter-class>filters.AdminFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>adminFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
   <servlet>
     <servlet-name>UserList</servlet-name>
     <servlet-class>controllers.ControllerUserList</servlet-class>

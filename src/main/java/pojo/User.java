@@ -10,7 +10,6 @@ import java.util.List;
 public class User {
     private String name;
     private String password;
-    private String host;
     private List<Role> roles = new ArrayList<Role>();
 
     public User(String uname,String password) {

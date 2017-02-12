@@ -107,9 +107,8 @@ public class UserDaoImplements implements UserDao {
         while (rs.next()) {
 
             String uname = rs.getString("user.user_name");
-            String pass = rs.getString("user.user_pass");
 
-            User user = new User(uname, pass);
+            User user = new User(uname);
             userList.add(user);
 
 
