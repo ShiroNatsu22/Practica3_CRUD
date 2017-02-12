@@ -70,6 +70,8 @@ public class ControllerUserList extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userName;
+        String newName;
+        List<Role> roles;
 
         if (req.getParameter("deleteUser") != null) {
             //Para borrar un usuario
@@ -78,12 +80,26 @@ public class ControllerUserList extends HttpServlet {
 
             try {
                 udi.deleteUser(userName);
+                resp.sendRedirect("UserList");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        } else if(req.getParameter("newName") != null){
+            userName = req.getParameter("oldName");
+            newName = req.getParameter("newName");
+
+            try {
+                roles = udi.findUser(userName, true).getRoles();
+                udi.updateUser(userName, newName, roles);
+                resp.sendRedirect("UserList");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
 
-        resp.sendRedirect("UserList");
+
+
 
     }
 }

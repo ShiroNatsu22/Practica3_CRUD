@@ -28,7 +28,7 @@ public class UserDaoImplements implements UserDao {
 
     public User findUser(String userName) throws SQLException {
 
-        String sql = "SELECT user.user_name,user.user_pass FROM dwes.user WHERE user.user_name =?";
+        String sql = "SELECT user.user_name FROM dwes.user WHERE user.user_name =?";
         PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
         ps.setString(1, userName);
         ResultSet rs = ps.executeQuery();
@@ -116,7 +116,27 @@ public class UserDaoImplements implements UserDao {
         return userList;
     }
 
-    public void updateUser(String name) throws SQLException {
+    public void updateUser(String oldName,String newName, List<Role> roles) throws SQLException {
+        String sql = "DELETE FROM dwes.user_roles WHERE user_name=?";
+
+        PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
+        ps.setString(1, oldName);
+        ps.execute();
+
+        sql = "UPDATE dwes.user SET user_name=? where user.user_name =?";
+        ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
+        ps.setString(1, newName);
+        ps.setString(2, oldName);
+        ps.execute();
+
+        sql = "INSERT into dwes.user_roles VALUES(?,?)";
+        for(Role role : roles) {
+            ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
+            ps.setString(1, newName);
+            ps.setString(2, role.getRoleName());
+            ps.execute();
+        }
+
 
     }
 
