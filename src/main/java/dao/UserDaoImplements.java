@@ -19,16 +19,12 @@ public class UserDaoImplements implements UserDao {
 
 
     private ConnectionFactory dbc;
-    private ArrayList<User> userList = new ArrayList<User>();
-    private List<Role> roleList = new ArrayList<Role>();
+
 
     public UserDaoImplements() {
 
     }
 
-    public void setConnection(ConnectionFactory dbc) {
-        this.dbc = dbc;
-    }
 
     public User findUser(String userName) throws SQLException {
 
@@ -52,6 +48,7 @@ public class UserDaoImplements implements UserDao {
     public User findUser(String name, boolean fillRoll) throws SQLException {
         if (fillRoll) {
             String sql = "select user.user_name,user_roles.role_name from user,roles,user_roles where user.user_name = user_roles.user_name and roles.role_name = user_roles.role_name and user.user_name=?";
+            List<Role> roleList = new ArrayList<Role>();
             PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
@@ -104,6 +101,7 @@ public class UserDaoImplements implements UserDao {
 
     public List<User> getUsers() throws SQLException {
         String sql = "SELECT * FROM dwes.user";
+        ArrayList<User> userList = new ArrayList<User>();
         PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
@@ -123,4 +121,5 @@ public class UserDaoImplements implements UserDao {
         this.dbc = dbc;
     }
 }
+
 

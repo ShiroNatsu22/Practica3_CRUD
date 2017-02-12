@@ -17,7 +17,6 @@ import pojo.Role;
 
 public class RoleDaoImplements implements RoleDao {
     private ConnectionFactory dbc;
-    private List<Role> roleList = new ArrayList<Role>();
 
 
     RoleDaoImplements() {
@@ -25,12 +24,10 @@ public class RoleDaoImplements implements RoleDao {
 
     }
 
-    public void setConnection(ConnectionFactory dbc) {
-        this.dbc = dbc;
-    }
 
     public List<Role> getRoles() throws SQLException {
         String sql = "SELECT * FROM dwes.roles";
+        List<Role> roleList = new ArrayList<Role>();
         PreparedStatement ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
@@ -65,7 +62,7 @@ public class RoleDaoImplements implements RoleDao {
 
         sql = "DELETE FROM dwes.roles WHERE role_name = ?";
         ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
-        ps.setString(1,roleName);
+        ps.setString(1, roleName);
         ps.execute();
     }
 
