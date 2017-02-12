@@ -116,6 +116,10 @@ public class UserDaoImplements implements UserDao {
         return userList;
     }
 
+    public void updateUser(String name) throws SQLException {
+
+    }
+
     public void setDbc(ConnectionFactory dbc) {
         this.dbc = dbc;
     }
