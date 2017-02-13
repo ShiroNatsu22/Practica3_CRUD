@@ -104,7 +104,7 @@ public class RoleDaoImplements implements RoleDao {
         for(User user : userList) {
             ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
             ps.setString(1, user.getName());
-            ps.setString(2,newRole );
+            ps.setString(2, newRole);
             ps.execute();
         }
     }

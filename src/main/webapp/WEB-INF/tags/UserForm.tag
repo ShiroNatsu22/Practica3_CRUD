@@ -5,7 +5,7 @@
     <c:when test="${requestScope['admin'] != null}">
         <c:choose>
             <c:when test="${requestScope['admin']}">
-                <h1>CREAR USUARIS</h1>
+                <h1>CREAR USUARIOS</h1>
                 <tag:nav></tag:nav>
                 <form action="UserForm" method="post">
                     <label>Nombre:</label>
@@ -25,7 +25,7 @@
                 </form>
             </c:when>
             <c:otherwise>
-                <p>No tienes permiso payaso, vuelve al <a href="index.jsp">indice</a></p>
+                <p>No tienes permiso , vuelve al <a href="index.jsp">indice</a></p>
             </c:otherwise>
         </c:choose>
     </c:when>

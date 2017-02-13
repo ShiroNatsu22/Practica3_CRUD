@@ -12,6 +12,8 @@
     <title>Cambiar rol</title>
 </head>
 <body>
+<h1>ACTUALIZAR ROL</h1>
+<tag:welcomeMessage></tag:welcomeMessage>
 <tag:updateRole></tag:updateRole>
 </body>
 </html>

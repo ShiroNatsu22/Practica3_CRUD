@@ -20,7 +20,7 @@
                 </form>
             </c:when>
             <c:otherwise>
-                <p>No tienes permiso payaso, vuelve al <a href="index.jsp">indice</a></p>
+                <p>No tienes permiso , vuelve al <a href="index.jsp">indice</a></p>
             </c:otherwise>
         </c:choose>
     </c:when>
