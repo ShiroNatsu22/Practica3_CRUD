@@ -103,8 +103,8 @@ public class RoleDaoImplements implements RoleDao {
         sql = "INSERT into dwes.user_roles VALUES(?,?)";
         for(User user : userList) {
             ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
-            ps.setString(1, newRole);
-            ps.setString(2, user.getName());
+            ps.setString(1, user.getName());
+            ps.setString(2,newRole );
             ps.execute();
         }
     }
