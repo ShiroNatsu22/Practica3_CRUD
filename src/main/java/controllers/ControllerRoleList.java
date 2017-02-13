@@ -42,6 +42,8 @@ public class ControllerRoleList extends HttpServlet{
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String roleName;
+        String newRole;
+        List<User> userList;
 
         if (req.getParameter("deleteRole") != null) {
             //Para borrar un rol
@@ -50,12 +52,25 @@ public class ControllerRoleList extends HttpServlet{
 
             try {
                 rdi.deleteRole(roleName);
+                resp.sendRedirect("RoleList");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        } else if(req.getParameter("newRole") != null){
+            roleName = req.getParameter("oldRole");
+            newRole = req.getParameter("newRole");
+
+            try {
+                userList = rdi.findRole(roleName).getUserList();
+                rdi.updateRole(roleName, newRole, userList);
+                resp.sendRedirect("RoleList");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
 
-        resp.sendRedirect("RoleList");
+
 
     }
 }
