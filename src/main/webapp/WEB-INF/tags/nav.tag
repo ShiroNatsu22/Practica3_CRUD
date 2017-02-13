@@ -15,7 +15,7 @@
                 <a href="index.jsp">index</a>
                 <a href="UserList">Llista dusuaris</a>
                 <a href="RoleList"> Llista de rols</a>
-                <a href="LogOut">Salir</a>
+                <a href="logout.jsp">Salir</a>
             </c:otherwise>
         </c:choose>
     </c:when>
