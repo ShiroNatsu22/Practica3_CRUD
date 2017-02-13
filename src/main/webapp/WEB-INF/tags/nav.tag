@@ -9,7 +9,7 @@
                 <a href="UserForm"> Crear usuari</a>
                 <a href="RoleList"> Llista de rols</a>
                 <a href="CreateRole.jsp">Crear Rol</a>
-                <a href="LogOut">Salir</a>
+                <a href="logout.jsp">Salir</a>
             </c:when>
             <c:otherwise>
                 <a href="index.jsp">index</a>
