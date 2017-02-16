@@ -14,12 +14,7 @@
             <tr>
                 <td><c:out value="${role.getRoleName()}"/></td>
                 <td><c:out value="${role.getRoleDesc()}"/></td>
-                <c:choose>
-                    <c:when test="${requestScope['admin']}">
-                        <td><form action="updateRole.jsp" method="get"><button type="submit" name="updateRole" value="${role.getRoleName()}">Edita</button></form></td>
-                        <td><form action="RoleList" method="post"><button type="submit" name="deleteRole" value="${role.getRoleName()}">Borra</button></form></td>
-                    </c:when>
-                </c:choose>
+                <td><form action="/RoleList" method="post"><button type="submit" name="deleteRole" value="${role.getRoleName()}">Borra</button></form></td>
             </tr>
         </c:forEach>
 

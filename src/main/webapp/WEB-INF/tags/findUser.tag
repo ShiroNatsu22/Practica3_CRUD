@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<form action="UserList" method="GET">
+<form action="/UserList" method="GET">
     <label>Cercar Usuari</label>
     <input type="text" name="findUser">
     <input type="checkbox" name="fillRole" value="fillRole">
