@@ -40,6 +40,13 @@ public class UserDaoImplements implements UserDao {
             return user;
         }
 
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
+        }
 
         return null;
 
@@ -60,6 +67,14 @@ public class UserDaoImplements implements UserDao {
 
 
             }
+
+            if (dbc != null) {
+                try {
+                    ps.close();
+                } catch (SQLException e) {
+            /* Ignore */
+                }
+            }
             return new User(uname, roleList);
 
         } else {
@@ -79,7 +94,14 @@ public class UserDaoImplements implements UserDao {
         ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
         ps.setString(1, name);
         ps.execute();
-    }
+
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
+        }}
 
 
     public void insertUser(String name, String password, String[] roles) throws SQLException {
@@ -95,6 +117,14 @@ public class UserDaoImplements implements UserDao {
             ps.setString(1, name);
             ps.setString(2, roles[i]);
             ps.execute();
+        }
+
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
         }
 
     }
@@ -113,6 +143,14 @@ public class UserDaoImplements implements UserDao {
 
 
         }
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
+        }
+
         return userList;
     }
 
@@ -137,6 +175,13 @@ public class UserDaoImplements implements UserDao {
             ps.execute();
         }
 
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
+        }
 
     }
 
