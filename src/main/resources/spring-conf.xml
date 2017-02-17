@@ -7,7 +7,7 @@
 
 
     <bean id="dbc" class="dbc.ConnectionFactory" scope="singleton">
-        <constructor-arg value="jdbc:mysql://192.168.1.45/dwes"/>
+        <constructor-arg value="jdbc:mysql://172.16.2.30/dwes"/>
         <constructor-arg value="root"/>
         <constructor-arg value="test"/>
     </bean>
