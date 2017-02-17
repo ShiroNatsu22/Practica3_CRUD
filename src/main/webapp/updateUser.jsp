@@ -12,6 +12,8 @@
     <title>Cambiar usuario</title>
 </head>
 <body>
+    <h1>ACTUALIZAR USUARIO</h1>
+    <tag:welcomeMessage></tag:welcomeMessage>
     <tag:updateUser></tag:updateUser>
 </body>
 </html>

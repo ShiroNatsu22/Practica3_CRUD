@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>LLISTA DE ROLS</h1>
+<h1>LISTA DE ROLES</h1>
 <tag:welcomeMessage></tag:welcomeMessage>
 <tag:nav></tag:nav>
 

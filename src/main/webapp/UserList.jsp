@@ -11,7 +11,7 @@
     <title>Llistat d'usuaris</title>
 </head>
 <body>
-<h1>LLISTA D'USUARIS</h1>
+<h1>LISTA DE USUARIOS</h1>
 <tag:welcomeMessage></tag:welcomeMessage>
 <tag:nav></tag:nav>
 

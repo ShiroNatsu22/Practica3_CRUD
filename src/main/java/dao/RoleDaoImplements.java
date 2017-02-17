@@ -40,6 +40,13 @@ public class RoleDaoImplements implements RoleDao {
 
 
         }
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
+        }
         return new Role(rname, userList);
 
 
@@ -61,6 +68,13 @@ public class RoleDaoImplements implements RoleDao {
 
 
         }
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
+        }
         return roleList;
     }
 
@@ -72,6 +86,13 @@ public class RoleDaoImplements implements RoleDao {
         ps.setString(2, roleDesc);
         ps.execute();
 
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
+        }
     }
 
     public void deleteRole(String roleName) throws SQLException {
@@ -85,6 +106,14 @@ public class RoleDaoImplements implements RoleDao {
         ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
         ps.setString(1, roleName);
         ps.execute();
+
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
+        }
     }
 
     public void updateRole(String oldRole, String newRole, List<User> userList) throws SQLException {
@@ -104,8 +133,16 @@ public class RoleDaoImplements implements RoleDao {
         for(User user : userList) {
             ps = (PreparedStatement) dbc.getConnection().prepareStatement(sql);
             ps.setString(1, user.getName());
-            ps.setString(2,newRole );
+            ps.setString(2, newRole);
             ps.execute();
+        }
+
+        if (dbc != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+            /* Ignore */
+            }
         }
     }
 
